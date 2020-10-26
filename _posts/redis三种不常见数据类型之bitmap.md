@@ -289,6 +289,10 @@ false positive[error count:256 error rate: 0.03]
 
 实际计算假阳性概率约为0.03。
 
+## 总结
+
+redis中的bitmap提供了一些直接操作字符串bit位的api，这类api能够很方便的在实际开发中解决很多问题。而redisbloom这个模块，使得redis真正支持布隆过滤器，以及支持删除的cuckoo filter。这类功能，在某些领域具有很大应用价值；在使用布隆过滤器的场景中，一定要考虑假阳性概率的情况，看看业务上是否能够容忍假阳性事件的出现。
+
 ### 参考
 
 http://pages.cs.wisc.edu/~cao/papers/summary-cache/node8.html

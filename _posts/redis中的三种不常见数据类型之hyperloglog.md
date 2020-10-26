@@ -76,10 +76,30 @@ OK
 
 #### 内存消耗
 
-之前介绍过hyperloglog通过极小的内存就能计算非常大集合的基数。我们可以用之前计算DAU的场景来模拟一下，假如用hyperloglog来存储活跃用户的ID，看看占用多大空间。
+之前介绍过hyperloglog通过极小的内存就能计算非常大集合的基数。我们可以用之前计算DAU的场景来模拟一下，假如用hyperloglog来存储活跃用户的ID，看看占用多大空间。用如下脚本来创建5千万个字符串id，看看最终的value有多长。
 
+```shell
+#!/bin/bash
+
+elements=""
+key="test_hyperloglog"
+for((i=1;i<=50000000;i++)); 
+do
+        elements="${key}_uuid_"${i}
+        ./redis-cli pfadd ${key} ${elements}
+        echo "add ${elements}"
+done
+echo "done."
 ```
 
+该脚本执行完比较耗时，（我这里没有执行完）在往redis中添加了14102763个字符串id后，最终的value字符串长度只有：12304,相当于12KB，可见hyperLogLog是很节省空间的。此外从pfcount得出的估计值：14261991，和实际值是有误差的，将近大了1.12%。
+
+```
+127.0.0.1:6379> strlen test_hyperloglog
+(integer) 12304
+127.0.0.1:6379> pfcount test_hyperloglog
+(integer) 14261991
+127.0.0.1:6379>
 ```
 
 ## 算法原理
@@ -226,6 +246,10 @@ logfile.close
 测试结果：
 
 ![实验结果](/images/16.png)
+
+## 总结
+
+hyperLogLog是一个利用概率统计来估算某个集合数据量的算法，有支持的数据量大，性能高，占用内存小的特点，由于是一个估算算法，所以没法得到精确值。
 
 ## 参考
 
