@@ -10,8 +10,6 @@ tags:
     - Java
 ---
 
-![](https://img.hacpai.com/bing/20171206.jpg?imageView2/1/w/960/h/520/interlace/1/q/10) 
-
 >由于测试需求，需要测试一些http接口是否正常，作为后端开发可以用脚本语言来实现比如python,shell之类的，这里分享一下，用shell如何实现。
 
 * URLencode方法

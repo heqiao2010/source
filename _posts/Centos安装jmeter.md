@@ -19,44 +19,61 @@ tags:
 #如何在CentOS中安装Jmeter
 1. Install JRE
 
-	`yum install java`
+  ```
+  yum install java
+  ```
 
 2. 下载jmeter
 
-	`wget http://mirrors.hust.edu.cn/apache//jmeter/binaries/apache-jmeter-4.0.tgz`
-	`tar zxf apache-jmeter-4.0.tgz`
+  ```
+  wget http://mirrors.hust.edu.cn/apache//jmeter/binaries/apache-jmeter-4.0.tgz
+  tar zxf apache-jmeter-4.0.tgz
+  ```
 
-1. 拷贝到系统目录
+3. 拷贝到系统目录
 
-	`mv apache-jmeter-4.0 /usr/local/`
+  ```
+  mv apache-jmeter-4.0 /usr/local/
+  ```
 
-1. 修改profile
+4. 修改profile
 
-	`vim /etc/profile`
-	
-	然后追加：
-	
-	`#/usr/local/apache-jmeter-4.0`
-	`export JMETER=/usr/local/apache-jmeter-4.0/`
-	`export CLASSPATH=$JMETER/lib/ext/ApacheJMeter_core.jar:$JMETER/lib/jorphan.jar:$JMETER/lib/logkit-2.0.jar:$CLASSPATH`
-	`export PATH=$JMETER/bin/:$PATH`
+  ```
+  vim /etc/profile
+  ```
 
-	然后source生效
-	`source /etc/profile`
+  然后追加：
+
+  ```
+  #/usr/local/apache-jmeter-4.0
+  export JMETER=/usr/local/apache-jmeter-4.0/
+  export CLASSPATH=$JMETER/lib/ext/ApacheJMeter_core.jar:$JMETER/lib/jorphan.jar:$JMETER/lib/logkit-2.0.jar:$CLASSPATH
+  export PATH=$JMETER/bin/:$PATH
+  ```
+
+  然后source生效
+
+  ```
+  source /etc/profile
+  ```
 
 1. 验证
 
-`[?]# jmeter -v`
-`May 12, 2018 9:44:30 AM java.util.prefs.FileSystemPreferences$1 run`
+```
+[?]# jmeter -v
+May 12, 2018 9:44:30 AM java.util.prefs.FileSystemPreferences$1 run
 
-`INFO: Created user preferences directory.`
-`_ ____ _ ____ _ _ _____ _ __ __ _____ _____ _____ ____`
-`/ \ | _ \ / \ / ___| | | | ____| | | \/ | ____|_ _| ____| _ \`
-`/ _ \ | |_) / _ \| | | |_| | _| _ | | |\/| | _| | | | _| | |_) |`
-`/ ___ \| __/ ___ \ |___| _ | |___ | |_| | | | | |___ | | | |___| _ <`
-`/_/ \_\_| /_/ \_\____|_| |_|_____| \___/|_| |_|_____| |_| |_____|_| \_\ 4.0 r1823414`
-`Copyright (c) 1999-2018 The Apache Software Foundation`
+INFO: Created user preferences directory.
+_ ____ _ ____ _ _ _____ _ __ __ _____ _____ _____ ____
+/ \ | _ \ / \ / ___| | | | ____| | | \/ | ____|_ _| ____| _ \
+/ _ \ | |_) / _ \| | | |_| | _| _ | | |\/| | _| | | | _| | |_) |
+/ ___ \| __/ ___ \ |___| _ | |___ | |_| | | | | |___ | | | |___| _ <
+/_/ \_\_| /_/ \_\____|_| |_|_____| \___/|_| |_|_____| |_| |_____|_| \_\ 4.0 r1823414
+Copyright (c) 1999-2018 The Apache Software Foundation
+```
 
-1. 如何基于命令行运行
+6. 如何基于命令行运行
 
-	`jmeter -n -t test1.jmx -l result.log 2>/dev/null`
+```
+jmeter -n -t test1.jmx -l result.log 2>/dev/null
+```

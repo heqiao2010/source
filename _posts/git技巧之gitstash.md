@@ -45,7 +45,8 @@ git stash drop　＃删除存储
 git stash apply stash@{2}
 ```
 
-##从储藏中创建分支
+### 从储藏中创建分支
+
 ```
 git stash branch [分支名]
 ```

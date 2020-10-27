@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "记一次重写RequestMappingHandlerMapping的经历"
-category:   Spring
+category:   security
 date:       2019-06-17 18:00:00
 author:     "HQ"
 header-img: "img/post-bg-2015.jpg"

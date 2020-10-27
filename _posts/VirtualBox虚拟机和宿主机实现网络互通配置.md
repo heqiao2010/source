@@ -7,7 +7,8 @@ author:     "HQ"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
-    - VirtualBox
+   - VirtualBox
+typora-root-url: ../../source
 ---
 
 >由于想要在本地测试一下syslog以及安装jenkins等需求，所以想在本地安装一个虚拟机，并且能够在宿主机上访问，所以想利于virtualbox上安装一个linux来实现，尝试了几次，其实配置挺简单的，这里记录一下。
@@ -39,7 +40,7 @@ VirtualBox的提供了四种网络接入模式
 
 如果做NAT的话，虚拟机是可以访问外网的，所以可以给虚拟机设置两个网卡。一个做桥接一个做NAT就达到目的了。
 
-![](https://raw.githubusercontent.com/heqiao2010/heqiao2010.github.io/master/img/2019/virtualbox-netconfig.png )
+![](/images/23.png)
 
 需要注意的是桥接网卡在虚拟机中需要手动配置一个和宿主机同网段的IP，网关和DNS最好和宿主机配置一致。
 

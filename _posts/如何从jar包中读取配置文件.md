@@ -9,8 +9,6 @@ catalog: true
 tags:
     - Java
 ---
-![](https://img.hacpai.com/bing/20180215.jpg?imageView2/1/w/960/h/520/interlace/1/q/100)
-
 >今天开发的时候遇到一个问题——当程序以jar包运行的时候,有个txt配置文件无法获取到,但是本地测试无法复现.后来发现是因为以Jar包形式运行，文件无法访问到，这里记录一下。
 
 ### 1. 如何判断当前进程是否以jar包形式运行的？

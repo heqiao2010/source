@@ -8,6 +8,7 @@ header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
     - Api管理
+typora-root-url: ../../source
 ---
 
 ## Swagger使用说明
@@ -25,7 +26,7 @@ Swagger是一套治理API的工具，根据OAS（Open Api Specification）这个
 在项目中，采用开开源的springfox支持API信息的采集。 
 
 (1)非Spring MVC项目(可以跳过该步骤)
- 
+
 (2)Spring MVC项目
 
 需要在MvcConfig中增加`@EnableSwagger2`注解，同时注入Bean`Docket`即可。
@@ -100,7 +101,7 @@ Springfox定义了一系列的注解，用于更好的描述各个API的内容�
     
         // … Constructor, getters, setters, ...
     }
-    
+
 
 支持JSR-303
 
@@ -145,11 +146,11 @@ RequestMappingHandlerMapping中的两个关键方法：
     			getCustomTypeCondition((Class<?>) element) : getCustomMethodCondition((Method) element));
     	return (requestMapping != null ? createRequestMappingInfo(requestMapping, condition) : null);
     }
-    
+
 
 Springfox获取Controller Bean信息的类图：
 
-![](https://raw.githubusercontent.com/heqiao2010/heqiao2010.github.io/master/img/2019/swagger.png )
+![](/images/24.png)
 
 参考：
 https://www.vojtechruzicka.com/documenting-spring-boot-rest-api-swagger-springfox/

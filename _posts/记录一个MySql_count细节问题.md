@@ -10,8 +10,6 @@ tags:
     - MySql
 ---
 
-![](https://img.hacpai.com/bing/20180418.jpg?imageView2/1/w/960/h/520/interlace/1/q/100)
-
 >下面两条SQL查询结果会不一样吗？
 
 ```

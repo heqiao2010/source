@@ -10,9 +10,6 @@ tags:
     - Java
 ---
 
-
-![](https://img.hacpai.com/bing/20181129.jpg?imageView2/1/w/960/h/520/interlace/1/q/100) 
-
 ### beanutils包
 beanutils，顾名思义，是java bean的一个工具类，可以帮助我们方便的读取(get)和设置(set)bean属性值、动态定义和访问bean属性；
 细心的话，会发现其实JDK已经提供了一个java.beans包，同样可以实现以上功能，只不过使用起来比较麻烦，所以诞生了apache commons beanutils；
